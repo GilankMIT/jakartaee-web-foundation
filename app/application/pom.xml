@@ -84,12 +84,12 @@
                                 <id>add-datasource</id>
                                 <phase>package</phase>
                                 <configuration>
-                                    <address>subsystem=datasources,data-source=postgresqlDS</address>
+                                    <address>subsystem=datasources,data-source=web_foundation_ds_001</address>
                                     <resources>
                                         <resource>
                                             <properties>
                                                 <connection-url>${connection_url}</connection-url>
-                                                <jndi-name>java:/postgresqlDS</jndi-name>
+                                                <jndi-name>java:/web_foundation_ds_001</jndi-name>
                                                 <enabled>true</enabled>
                                                 <user-name>${db_username}</user-name>
                                                 <password>${db_password}</password>

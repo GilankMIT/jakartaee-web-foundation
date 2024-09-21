@@ -1,0 +1,1 @@
+INSERT INTO web_user (id, username) VALUES ('1', 'Eminem');

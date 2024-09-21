@@ -18,6 +18,13 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>id.gilangprambudi</groupId>
+            <artifactId>web-foundation-core-service</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -69,35 +76,35 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <id>unpack</id>
-                        <phase>process-test-classes</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.wildfly</groupId>
-                                    <artifactId>wildfly-dist</artifactId>
-                                    <version>30.0.1.Final</version>
-                                    <type>zip</type>
-                                    <overWrite>false</overWrite>
-                                    <outputDirectory>${project.build.directory}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-dependency-plugin</artifactId>-->
+<!--                <version>3.3.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>unpack</id>-->
+<!--                        <phase>process-test-classes</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>unpack</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <artifactItems>-->
+<!--                                <artifactItem>-->
+<!--                                    <groupId>org.wildfly</groupId>-->
+<!--                                    <artifactId>wildfly-dist</artifactId>-->
+<!--                                    <version>30.0.1.Final</version>-->
+<!--                                    <type>zip</type>-->
+<!--                                    <overWrite>false</overWrite>-->
+<!--                                    <outputDirectory>${project.build.directory}</outputDirectory>-->
+<!--                                </artifactItem>-->
+<!--                            </artifactItems>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>

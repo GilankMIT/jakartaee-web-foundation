@@ -29,16 +29,35 @@ public class TestBase {
 
     @Deployment
     public static WebArchive createDeployment() {
+
+//        return ShrinkWrap.create(WebArchive.class, "test.war")
+//                .addPackages(true, "web.foundation")
+//                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
+//                .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
+//                .addAsLibraries(Maven.resolver().loadPomFromFile("pom.xml")
+//                        .importRuntimeDependencies()
+//                        .resolve()
+//                        .withTransitivity().asFile())
+//                .addAsResource("test-persistence.xml", "META-INF/persistence.xml");
+
         File[] files = Maven.resolver().loadPomFromFile("pom.xml")
                 .importRuntimeAndTestDependencies()
                 .resolve()
                 .withTransitivity()
                 .asFile();
 
-        return ShrinkWrap.create(WebArchive.class)
-                .addAsLibraries(files)
+        WebArchive war = ShrinkWrap.create(WebArchive.class)
                 .addPackages(true, "web.foundation")
-                .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
+                .addAsResource("META-INF/beans.xml", "META-INF/beans.xml")
+                .addAsLibraries(files)
+                .addAsResource("import.sql")
+                .addAsResource("logback.xml")
+                .addAsResource("META-INF/jboss-web.xml")
+                .addAsResource("META-INF/jboss-deployment-structure.xml")
+                .addAsResource("META-INF/test-persistence.xml", "META-INF/persistence.xml");
+        System.out.println(war.toString(true));
+        return war;
+
     }
 
     @Inject
@@ -49,6 +68,7 @@ public class TestBase {
     public void testUserService(){
         WebUser user = userService.getUser();
         System.out.println(user.getUsername());
+        System.out.println(userService.getAllUser());
     }
 
 }

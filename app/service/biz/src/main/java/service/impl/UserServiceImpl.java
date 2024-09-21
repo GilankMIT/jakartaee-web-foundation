@@ -1,6 +1,8 @@
 
 package service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import service.UserService;
 import id.gilangprambudi.web.foundation.service.core.dataobject.WebUserDO;
 import id.gilangprambudi.web.foundation.service.core.model.WebUser;
@@ -20,6 +22,7 @@ import java.util.List;
 @ApplicationScoped
 public class UserServiceImpl implements UserService {
 
+    private final static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     @Inject
     UserCoreService userCoreService;
 
@@ -30,6 +33,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<WebUser> getAllUser() {
+        LOGGER.info("EA EA EA WES EWES EWES");
         return userCoreService.getAllUser();
     }
 
