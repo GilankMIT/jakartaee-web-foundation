@@ -1,0 +1,1 @@
+mvn wildfly:shutdown -pl app/application/pom.xml -Pwildfly-deployment
