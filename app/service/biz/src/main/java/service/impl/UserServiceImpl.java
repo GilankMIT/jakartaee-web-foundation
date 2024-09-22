@@ -33,12 +33,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<WebUser> getAllUser() {
-        LOGGER.info("EA EA EA WES EWES EWES");
+        LOGGER.info("Retrieving All Users using JPA Hibernate");
         return userCoreService.getAllUser();
     }
 
     @Override
     public List<WebUserDO> getAllUserDO() {
+        LOGGER.info("Retrieving All Users using MyBatis");
         return userCoreService.getAllUserDO();
     }
 

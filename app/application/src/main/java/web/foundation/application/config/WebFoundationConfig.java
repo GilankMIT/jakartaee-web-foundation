@@ -1,4 +1,4 @@
-package config; /**
+package web.foundation.application.config; /**
  * gilangprambudi.net
  * Copyright (c) 2019‐2024 All Rights Reserved.
  */
