@@ -9,8 +9,6 @@ import jakarta.inject.Inject;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.junit.Test;
@@ -20,7 +18,7 @@ import service.UserService;
 import java.io.File;
 
 /**
- * @author gilang.prambudi (gilang.prambudi@dana.id)
+ * @author gilang.prambudi (itgilangprambudi@gmail.com)
  * @version $Id: TestBase.java, v 0.1 2024‐09‐20 07.19 gilang.prambudi Exp $$
  */
 
@@ -29,16 +27,6 @@ public class TestBase {
 
     @Deployment
     public static WebArchive createDeployment() {
-
-//        return ShrinkWrap.create(WebArchive.class, "test.war")
-//                .addPackages(true, "web.foundation")
-//                .addAsResource("META-INF/persistence.xml", "META-INF/persistence.xml")
-//                .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
-//                .addAsLibraries(Maven.resolver().loadPomFromFile("pom.xml")
-//                        .importRuntimeDependencies()
-//                        .resolve()
-//                        .withTransitivity().asFile())
-//                .addAsResource("test-persistence.xml", "META-INF/persistence.xml");
 
         File[] files = Maven.resolver().loadPomFromFile("pom.xml")
                 .importRuntimeAndTestDependencies()
